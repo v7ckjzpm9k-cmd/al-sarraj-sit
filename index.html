@@ -1,279 +1,271 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>شركة السراج للهندسة المعمارية | Al-Sarraj Company</title>
+  <title>شركة السراج للهندسة المعمارية</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+    :root{
+      --gold:#c9a227;
+      --gold2:#e6c66a;
+      --black:#0f0f0f;
+      --gray:#666;
+      --line:#ece7d6;
+      --shadow:0 12px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Tahoma, Arial, sans-serif}
+    html{scroll-behavior:smooth}
+    body{background:linear-gradient(180deg,#fff 0%, #fcfcfc 100%);color:#111;line-height:1.9}
+    a{text-decoration:none}
+    .container{width:min(1100px,92%);margin:auto}
+
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line); box-shadow:var(--shadow);
+    }
+    .topbar{
+      padding:18px 0;text-align:center;
+      background:linear-gradient(135deg,#fff 0%, #f8f3e5 100%);
+    }
+    .logo{
+      width:100px;height:100px;object-fit:contain;border-radius:50%;
+      border:3px solid var(--gold);background:#fff;box-shadow:0 0 20px rgba(201,162,39,.22);
+      margin-bottom:10px;
+    }
+    h1{font-size:26px;color:var(--black);letter-spacing:.5px}
+    .subtitle{color:#8b6e1e;font-size:14px;margin-top:6px}
+
+    nav{
+      background:var(--black);
+      overflow:auto;white-space:nowrap;
+      padding:12px 0;text-align:center;
+    }
+    nav a{
+      color:#fff;margin:0 10px;font-size:15px;
+      padding:8px 12px;border-radius:999px;display:inline-block;
+    }
+    nav a:hover{background:var(--gold);color:#fff}
+
+    section{padding:55px 0}
+    .title{
+      text-align:center;font-size:30px;margin-bottom:26px;color:var(--black);position:relative;
+    }
+    .title::after{
+      content:"";display:block;width:90px;height:3px;background:var(--gold);
+      margin:12px auto 0;border-radius:5px;
     }
 
-    body {
-      color: #fff;
-      background:
-        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-        url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80") center/cover fixed;
-      line-height: 1.8;
-      direction: rtl;
+    .card{
+      background:#fff;border:1px solid #f0f0f0;border-top:4px solid var(--gold);
+      border-radius:20px;padding:22px;box-shadow:var(--shadow);
     }
 
-    .container {
-      width: 92%;
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px 0 90px;
+    .hero{
+      text-align:center;padding:48px 0 30px;
+    }
+    .hero h2{font-size:34px;line-height:1.5;color:var(--black)}
+    .hero p{max-width:820px;margin:14px auto 0;color:var(--gray);font-size:16px}
+
+    .btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}
+    .btn{
+      display:inline-block;padding:13px 22px;border-radius:999px;font-weight:700;
+      transition:.25s ease; border:1px solid transparent
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff}
+    .btn-dark{background:var(--black);color:#fff}
+    .btn-outline{background:#fff;color:var(--black);border:2px solid var(--gold)}
+
+    .grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px
+    }
+    .box,.testimonial{
+      background:#fff;border:1px solid #f2f2f2;border-radius:18px;box-shadow:var(--shadow)
+    }
+    .box{
+      padding:20px;text-align:center;border-top:4px solid var(--gold)
+    }
+    .box h3{margin-bottom:8px;color:var(--black)}
+    .box p{color:var(--gray);font-size:14px}
+
+    .gallery img{
+      width:100%;height:230px;object-fit:cover;border-radius:18px;
+      border:2px solid var(--gold);box-shadow:var(--shadow)
     }
 
-    header {
-      text-align: center;
-      padding: 38px 16px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 24px;
-      margin-top: 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    .testimonial{padding:20px;border-right:4px solid var(--gold)}
+    .testimonial p{color:#333}
+    .testimonial h4{margin-top:12px;color:var(--gold)}
+
+    .info-list{display:grid;gap:10px;margin-top:10px;color:#333}
+    .info-list strong{color:var(--black)}
+    .map{
+      margin-top:16px;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #eee
+    }
+    .map iframe{width:100%;height:320px;border:0;display:block}
+
+    footer{
+      background:var(--black);color:#fff;text-align:center;padding:20px 10px;margin-top:10px
     }
 
-    .logo {
-      width: 140px;
-      height: 140px;
-      object-fit: contain;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      background: #000;
-      padding: 10px;
-      margin-bottom: 18px;
-      box-shadow: 0 0 0 6px rgba(255,255,255,0.06);
+    .whatsapp-fixed{
+      position:fixed;left:16px;bottom:16px;z-index:9999;
+      background:#25d366;color:#fff;padding:14px 18px;border-radius:999px;
+      box-shadow:0 12px 25px rgba(0,0,0,.22);font-weight:700
     }
 
-    h1 {
-      color: #fff;
-      font-size: 27px;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
+    .float-call{
+      position:fixed;right:16px;bottom:16px;z-index:9999;
+      background:var(--gold);color:#fff;padding:14px 18px;border-radius:999px;
+      box-shadow:0 12px 25px rgba(0,0,0,.18);font-weight:700
     }
 
-    .subtitle {
-      color: #e6e6e6;
-      font-size: 15px;
-    }
-
-    h2 {
-      color: #fff;
-      font-size: 22px;
-      margin-bottom: 12px;
-    }
-
-    p, li {
-      color: #e8e8e8;
-      font-size: 16px;
-    }
-
-    section {
-      background: rgba(0, 0, 0, 0.62);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 18px;
-      padding: 22px;
-      margin-top: 20px;
-      backdrop-filter: blur(7px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.22);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .service {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 14px;
-      padding: 14px;
-      color: #fff;
-    }
-
-    .contact-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 15px;
-      justify-content: center;
-    }
-
-    .btn {
-      text-decoration: none;
-      padding: 14px 20px;
-      border-radius: 12px;
-      font-weight: bold;
-      color: #111;
-      display: inline-block;
-      min-width: 140px;
-      text-align: center;
-      transition: 0.3s ease;
-      background: #fff;
-      border: 1px solid #fff;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      background: #f1f1f1;
-    }
-
-    .whatsapp-fixed {
-      position: fixed;
-      bottom: 18px;
-      right: 18px;
-      z-index: 999;
-      background: #25d366;
-      color: #fff;
-      text-decoration: none;
-      padding: 14px 18px;
-      border-radius: 999px;
-      font-weight: bold;
-      box-shadow: 0 10px 22px rgba(0,0,0,0.35);
-      border: 2px solid rgba(255,255,255,0.25);
-    }
-
-    .whatsapp-fixed:hover {
-      opacity: 0.95;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 30px;
-      color: #ccc;
-      font-size: 14px;
-      padding-bottom: 10px;
-    }
-
-    .highlight {
-      color: #fff;
-      font-weight: bold;
-    }
-
-    .arabic {
-      font-size: 17px;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 22px;
-      }
-
-      h2 {
-        font-size: 19px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .contact-buttons {
-        flex-direction: column;
-      }
-
-      .logo {
-        width: 120px;
-        height: 120px;
-      }
-
-      .whatsapp-fixed {
-        bottom: 14px;
-        right: 14px;
-        padding: 13px 16px;
-      }
+    @media (max-width:768px){
+      h1{font-size:22px}
+      .hero h2{font-size:26px}
+      .title{font-size:24px}
+      .gallery img{height:210px}
+      .whatsapp-fixed,.float-call{padding:12px 14px;font-size:14px}
     }
   </style>
 </head>
 <body>
-  <div class="container">
 
-    <header>
-      <img src="logo.png" alt="Al-Sarraj Company Logo" class="logo" />
+  <header>
+    <div class="topbar">
+      <img src="logo.PNG" class="logo" alt="Logo">
       <h1>AL-SARRAJ COMPANY</h1>
-      <p class="subtitle">ENGINEERING CONTRACTING AND GENERAL TRADING COMPANY</p>
-    </header>
+      <div class="subtitle">ENGINEERING CONTRACTING AND GENERAL TRADING COMPANY</div>
+    </div>
+    <nav>
+      <a href="#about">من نحن</a>
+      <a href="#services">الخدمات</a>
+      <a href="#gallery">المشاريع</a>
+      <a href="#testimonials">آراء العملاء</a>
+      <a href="#location">الموقع</a>
+      <a href="#contact">تواصل</a>
+    </nav>
+  </header>
 
-    <section>
-      <h2>About Us</h2>
-      <p class="arabic">
-        شركة السراج للهندسة المعمارية هي شركة متخصصة في أعمال المقاولات الهندسية والتجارة العامة، وتركز منذ
-        <span class="highlight">2024</span> على بناء علاقات مهنية قوية في مجال المقاولات والخدمات الهندسية.
-      </p>
+  <section class="hero">
+    <div class="container">
+      <h2>فخامة في التصميم، واحترافية في التنفيذ</h2>
       <p>
-        Our qualified team includes management, architectural, civil, electrical, and mechanical specialists.
+        شركة السراج للهندسة المعمارية — شركة متخصصة في المقاولات العامة والتجارة العامة،
+        تقدم حلولًا هندسية متكاملة بجودة عالية ولمسة راقية.
       </p>
-    </section>
-
-    <section>
-      <h2>Company Profile</h2>
-      <p>
-        We specialize in construction and general contracting with a commitment to quality, professionalism, and excellence.
-      </p>
-    </section>
-
-    <section>
-      <h2>Quality and Safety Policy</h2>
-      <p>
-        We are committed to material examination, quality control, and occupational health and safety standards in all our projects.
-      </p>
-    </section>
-
-    <section>
-      <h2>Services</h2>
-      <div class="services-grid">
-        <div class="service">Engineering Design</div>
-        <div class="service">Project Management</div>
-        <div class="service">Engineering Supervision</div>
-        <div class="service">Electrical and Mechanical Works</div>
-        <div class="service">Construction Works</div>
-        <div class="service">Engineering Consulting</div>
-        <div class="service">Maintenance and Operation</div>
+      <div class="btns">
+        <a class="btn btn-gold" href="https://wa.me/9647844910779" target="_blank">تواصل واتساب</a>
+        <a class="btn btn-dark" href="#gallery">شاهد المشاريع</a>
+        <a class="btn btn-outline" href="https://maps.google.com/?q=Baghdad+Mansour+Iraq" target="_blank">الموقع على الخريطة</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h2>Activity</h2>
-      <p>General contracting including architectural, civil, sanitary, electrical, and mechanical works.</p>
-    </section>
-
-    <section>
-      <h2>Goal</h2>
-      <p>To provide the best services related to contracting and general services.</p>
-    </section>
-
-    <section>
-      <h2>Vision</h2>
-      <p>To expand using environmentally friendly technology and smart ideas.</p>
-    </section>
-
-    <section>
-      <h2>Contact Us</h2>
-      <p><span class="highlight">Locations:</span> Iraq, Baghdad — Branch 1 and Branch 2 in Mansour</p>
-      <p><span class="highlight">Engineer:</span> Hassanin Ahmed</p>
-      <p><span class="highlight">Phones:</span> 07844910779 / 07721123000 / 07821123000 / 07704925500</p>
-
-      <div class="contact-buttons">
-        <a class="btn" href="tel:07844910779">Call Now</a>
-        <a class="btn" href="https://www.instagram.com/alsiraj.eng?exln=MWY5YmFpMGpkb2NjdQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+  <section id="about">
+    <div class="container">
+      <h2 class="title">من نحن</h2>
+      <div class="card">
+        <p>
+          شركة السراج للهندسة المعمارية تأسست عام 2024،
+          وتعمل في مجال المقاولات الهندسية والتجارة العامة.
+          نحن نبني علاقات مهنية قوية في قطاع المقاولات والهندسة، ونعتمد على فريق مؤهل
+          في الإدارة والهندسة المعمارية والمدنية والكهربائية والميكانيكية.
+        </p>
+        <p style="margin-top:12px;">
+          نهدف إلى تقديم أفضل الخدمات المتعلقة بالمقاولات والخدمات العامة، مع رؤية توسع
+          باستخدام التكنولوجيا الصديقة للبيئة والأفكار الذكية.
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      © 2024 Al-Sarraj Company. All rights reserved.
-    </footer>
+  <section id="services">
+    <div class="container">
+      <h2 class="title">خدماتنا</h2>
+      <div class="grid">
+        <div class="box"><h3>التصميم الهندسي</h3><p>تصاميم دقيقة وعصرية</p></div>
+        <div class="box"><h3>إدارة المشاريع</h3><p>تنظيم وتنفيذ احترافي</p></div>
+        <div class="box"><h3>الإشراف الهندسي</h3><p>متابعة الجودة في كل مرحلة</p></div>
+        <div class="box"><h3>الأعمال الكهربائية والميكانيكية</h3><p>حلول متكاملة للمشاريع</p></div>
+        <div class="box"><h3>الأعمال الإنشائية</h3><p>تنفيذ قوي وموثوق</p></div>
+        <div class="box"><h3>الاستشارات الهندسية</h3><p>توجيه هندسي متخصص</p></div>
+        <div class="box"><h3>الصيانة والتشغيل</h3><p>استمرارية وكفاءة عالية</p></div>
+      </div>
+    </div>
+  </section>
 
-  </div>
+  <section id="gallery">
+    <div class="container">
+      <h2 class="title">المشاريع</h2>
+      <div class="grid gallery">
+        <img src="photo1.jpg" alt="مشروع 1">
+        <img src="photo2.jpg" alt="مشروع 2">
+        <img src="photo3.JPG" alt="مشروع 3">
+      </div>
+    </div>
+  </section>
 
-  <a class="whatsapp-fixed" href="https://wa.me/9647844910779" target="_blank" rel="noopener">
-    WhatsApp
-  </a>
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="title">آراء العملاء</h2>
+      <div class="grid">
+        <div class="testimonial">
+          <p>شركة راقية جدًا في التعامل والتنفيذ، والتزامهم بالمواعيد ممتاز.</p>
+          <h4>- عميل</h4>
+        </div>
+        <div class="testimonial">
+          <p>جودة العمل ممتازة، والنتيجة النهائية كانت أفضل من المتوقع.</p>
+          <h4>- عميل</h4>
+        </div>
+        <div class="testimonial">
+          <p>فريق محترف، وخدمة عالية المستوى، وأنصح بالتعامل معهم.</p>
+          <h4>- عميل</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="location">
+    <div class="container">
+      <h2 class="title">الموقع</h2>
+      <div class="card">
+        <div class="info-list">
+          <div><strong>العنوان:</strong> العراق - بغداد - المنصور (فرع 1 وفرع 2)</div>
+          <div><strong>المدير:</strong> المهندس حسنين أحمد</div>
+          <div><strong>الأرقام:</strong> 07844910779 / 07721123000 / 07821123000 / 07704925500</div>
+        </div>
+        <div class="map">
+          <iframe src="https://www.google.com/maps?q=Baghdad+Mansour+Iraq&output=embed"></iframe>
+        </div>
+        <div class="btns">
+          <a class="btn btn-gold" href="https://maps.google.com/?q=Baghdad+Mansour+Iraq" target="_blank">فتح الخريطة</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="title">تواصل معنا</h2>
+      <div class="card" style="text-align:center;">
+        <p>اختر طريقة التواصل المناسبة:</p>
+        <div class="btns">
+          <a class="btn btn-gold" href="https://wa.me/9647844910779" target="_blank">واتساب</a>
+          <a class="btn btn-dark" href="https://www.instagram.com/alsiraj.eng?exln=MWY5YmFpMGpkb2NjdQ%3D%3D&utm_source=qr" target="_blank">إنستغرام</a>
+          <a class="btn btn-outline" href="tel:07844910779">اتصال</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a class="whatsapp-fixed" href="https://wa.me/9647844910779" target="_blank">واتساب</a>
+  <a class="float-call" href="tel:07844910779">اتصال</a>
+
+  <footer>
+    © 2024 شركة السراج للهندسة المعمارية
+  </footer>
+
 </body>
 </html>
