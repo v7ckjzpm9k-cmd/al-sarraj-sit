@@ -1,182 +1,279 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>شركة السراج للهندسة المعمارية</title>
+  <title>شركة السراج للهندسة المعمارية | Al-Sarraj Company</title>
   <style>
-    :root{
-      --gold:#c9a227;
-      --gold-2:#e0c15a;
-      --dark:#121212;
-      --dark-2:#1b1b1b;
-      --white:#ffffff;
-      --muted:#d7d7d7;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:linear-gradient(180deg,var(--dark) 0%, #0f0f0f 100%);
-      color:var(--white);
-      line-height:1.8;
+
+    body {
+      color: #fff;
+      background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80") center/cover fixed;
+      line-height: 1.8;
+      direction: rtl;
     }
-    .container{max-width:1100px;margin:auto;padding:20px}
-    header{
-      background:linear-gradient(135deg,var(--dark-2),#000);
-      border-bottom:3px solid var(--gold);
-      padding:40px 20px;
-      text-align:center;
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px 0 90px;
     }
-    .logo{
-      color:var(--gold-2);
-      font-size:20px;
-      letter-spacing:2px;
-      font-weight:bold;
+
+    header {
+      text-align: center;
+      padding: 38px 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 24px;
+      margin-top: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
     }
-    h1{
-      margin:12px 0 8px;
-      font-size:28px;
-      color:var(--white);
+
+    .logo {
+      width: 140px;
+      height: 140px;
+      object-fit: contain;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      background: #000;
+      padding: 10px;
+      margin-bottom: 18px;
+      box-shadow: 0 0 0 6px rgba(255,255,255,0.06);
     }
-    .subtitle{
-      color:var(--gold-2);
-      font-size:15px;
+
+    h1 {
+      color: #fff;
+      font-size: 27px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
     }
-    section{
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(201,162,39,0.25);
-      border-radius:16px;
-      padding:22px;
-      margin:18px 0;
-      box-shadow:0 8px 30px rgba(0,0,0,0.25);
+
+    .subtitle {
+      color: #e6e6e6;
+      font-size: 15px;
     }
-    h2{
-      color:var(--gold-2);
-      margin-top:0;
-      font-size:22px;
-      border-right:4px solid var(--gold);
-      padding-right:10px;
+
+    h2 {
+      color: #fff;
+      font-size: 22px;
+      margin-bottom: 12px;
     }
-    ul{
-      padding-right:20px;
-      margin:0;
+
+    p, li {
+      color: #e8e8e8;
+      font-size: 16px;
     }
-    li{margin:8px 0}
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:14px;
+
+    section {
+      background: rgba(0, 0, 0, 0.62);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 18px;
+      padding: 22px;
+      margin-top: 20px;
+      backdrop-filter: blur(7px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.22);
     }
-    .card{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(224,193,90,0.2);
-      border-radius:14px;
-      padding:16px;
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
     }
-    .label{color:var(--gold-2);font-weight:bold}
-    footer{
-      text-align:center;
-      padding:24px 10px 40px;
-      color:var(--muted);
-      font-size:14px;
+
+    .service {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 14px;
+      color: #fff;
     }
-    .highlight{
-      color:var(--gold-2);
-      font-weight:bold;
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 15px;
+      justify-content: center;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      color: #111;
+      display: inline-block;
+      min-width: 140px;
+      text-align: center;
+      transition: 0.3s ease;
+      background: #fff;
+      border: 1px solid #fff;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #f1f1f1;
+    }
+
+    .whatsapp-fixed {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 999;
+      background: #25d366;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: bold;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+      border: 2px solid rgba(255,255,255,0.25);
+    }
+
+    .whatsapp-fixed:hover {
+      opacity: 0.95;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #ccc;
+      font-size: 14px;
+      padding-bottom: 10px;
+    }
+
+    .highlight {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .arabic {
+      font-size: 17px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 22px;
+      }
+
+      h2 {
+        font-size: 19px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .contact-buttons {
+        flex-direction: column;
+      }
+
+      .logo {
+        width: 120px;
+        height: 120px;
+      }
+
+      .whatsapp-fixed {
+        bottom: 14px;
+        right: 14px;
+        padding: 13px 16px;
+      }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <div class="logo">AL-SARRAJ COMPANY</div>
-    <h1>ENGINEERING CONTRACTING AND GENERAL TRADING COMPANY</h1>
-    <div class="subtitle">شركة السراج للهندسة المعمارية</div>
-  </header>
-
   <div class="container">
+
+    <header>
+      <img src="logo.png" alt="Al-Sarraj Company Logo" class="logo" />
+      <h1>AL-SARRAJ COMPANY</h1>
+      <p class="subtitle">ENGINEERING CONTRACTING AND GENERAL TRADING COMPANY</p>
+    </header>
 
     <section>
       <h2>About Us</h2>
+      <p class="arabic">
+        شركة السراج للهندسة المعمارية هي شركة متخصصة في أعمال المقاولات الهندسية والتجارة العامة، وتركز منذ
+        <span class="highlight">2024</span> على بناء علاقات مهنية قوية في مجال المقاولات والخدمات الهندسية.
+      </p>
       <p>
-        Al-Sarraj Company for Engineering Architecture is a professional company focused on building strong
-        relationships in the fields of contracting and engineering. We have a highly qualified team including
-        management, architectural, civil, electrical, and mechanical specialists, and we provide drawings and
-        design solutions for different projects.
+        Our qualified team includes management, architectural, civil, electrical, and mechanical specialists.
       </p>
     </section>
 
     <section>
       <h2>Company Profile</h2>
       <p>
-        Established in <span class="highlight">2007</span>, the company specializes in construction, building,
-        and general contracting works under difficult security and humanitarian conditions, while maintaining
-        commitment to quality and professionalism.
+        We specialize in construction and general contracting with a commitment to quality, professionalism, and excellence.
       </p>
     </section>
 
     <section>
       <h2>Quality and Safety Policy</h2>
       <p>
-        We follow a strict policy of permanent examination of materials and laboratory testing to ensure success.
-        We are committed to occupational health and safety for workers, users, and subcontractors.
+        We are committed to material examination, quality control, and occupational health and safety standards in all our projects.
       </p>
     </section>
 
     <section>
       <h2>Services</h2>
-      <div class="grid">
-        <div class="card">Engineering Design</div>
-        <div class="card">Project Management</div>
-        <div class="card">Engineering Supervision</div>
-        <div class="card">Electrical and Mechanical Works</div>
-        <div class="card">Construction Works</div>
-        <div class="card">Engineering Consulting</div>
-        <div class="card">Maintenance and Operation</div>
+      <div class="services-grid">
+        <div class="service">Engineering Design</div>
+        <div class="service">Project Management</div>
+        <div class="service">Engineering Supervision</div>
+        <div class="service">Electrical and Mechanical Works</div>
+        <div class="service">Construction Works</div>
+        <div class="service">Engineering Consulting</div>
+        <div class="service">Maintenance and Operation</div>
       </div>
     </section>
 
     <section>
       <h2>Activity</h2>
-      <p>
-        General contracting including Architectural, Civil, Sanitary, Electrical, and Mechanical engineering.
-      </p>
+      <p>General contracting including architectural, civil, sanitary, electrical, and mechanical works.</p>
     </section>
 
     <section>
       <h2>Goal</h2>
-      <p>
-        To provide the best services related to contracting and general services.
-      </p>
+      <p>To provide the best services related to contracting and general services.</p>
     </section>
 
     <section>
       <h2>Vision</h2>
-      <p>
-        To expand into advanced businesses using environmentally friendly technology and smart ideas.
-      </p>
+      <p>To expand using environmentally friendly technology and smart ideas.</p>
     </section>
 
     <section>
-      <h2>Locations</h2>
-      <p>
-        Iraq, Baghdad — Branch 1 and Branch 2 in Mansour.
-      </p>
+      <h2>Contact Us</h2>
+      <p><span class="highlight">Locations:</span> Iraq, Baghdad — Branch 1 and Branch 2 in Mansour</p>
+      <p><span class="highlight">Engineer:</span> Hassanin Ahmed</p>
+      <p><span class="highlight">Phones:</span> 07844910779 / 07721123000 / 07821123000 / 07704925500</p>
+
+      <div class="contact-buttons">
+        <a class="btn" href="tel:07844910779">Call Now</a>
+        <a class="btn" href="https://www.instagram.com/alsiraj.eng?exln=MWY5YmFpMGpkb2NjdQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </section>
 
-    <section>
-      <h2>Engineer</h2>
-      <p>
-        <span class="highlight">Hassanin Ahmed</span>
-      </p>
-    </section>
+    <footer>
+      © 2024 Al-Sarraj Company. All rights reserved.
+    </footer>
 
   </div>
 
-  <footer>
-    © 2026 Al-Sarraj Company. All rights reserved.
-  </footer>
-
+  <a class="whatsapp-fixed" href="https://wa.me/9647844910779" target="_blank" rel="noopener">
+    WhatsApp
+  </a>
 </body>
 </html>
