@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>شركة السراج للهندسة المعمارية</title>
+  <title>Al-Sarraj Company</title>
   <style>
     :root{
       --gold:#c9a227;
@@ -15,9 +15,36 @@
     }
     *{box-sizing:border-box;margin:0;padding:0;font-family:Tahoma, Arial, sans-serif}
     html{scroll-behavior:smooth}
-    body{background:linear-gradient(180deg,#fff 0%, #fcfcfc 100%);color:#111;line-height:1.9}
+    body{
+      background:linear-gradient(180deg,#fff 0%, #fcfcfc 100%);
+      color:#111;line-height:1.9;
+      overflow-x:hidden;
+    }
     a{text-decoration:none}
     .container{width:min(1100px,92%);margin:auto}
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(201,162,39,.10), transparent 26%),
+        radial-gradient(circle at 80% 30%, rgba(0,0,0,.05), transparent 22%),
+        radial-gradient(circle at 50% 80%, rgba(201,162,39,.08), transparent 28%);
+      animation:bgMove 16s ease-in-out infinite alternate;
+    }
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-3;
+      background:linear-gradient(120deg, rgba(255,255,255,.96), rgba(255,248,229,.92));
+    }
+    @keyframes bgMove{
+      0%{transform:scale(1) translateY(0)}
+      100%{transform:scale(1.08) translateY(-12px)}
+    }
 
     header{
       position:sticky;top:0;z-index:1000;
@@ -32,6 +59,11 @@
       width:100px;height:100px;object-fit:contain;border-radius:50%;
       border:3px solid var(--gold);background:#fff;box-shadow:0 0 20px rgba(201,162,39,.22);
       margin-bottom:10px;
+      animation:floatLogo 4s ease-in-out infinite;
+    }
+    @keyframes floatLogo{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-6px)}
     }
     h1{font-size:26px;color:var(--black);letter-spacing:.5px}
     .subtitle{color:#8b6e1e;font-size:14px;margin-top:6px}
@@ -91,10 +123,27 @@
 
     .gallery img{
       width:100%;height:230px;object-fit:cover;border-radius:18px;
-      border:2px solid var(--gold);box-shadow:var(--shadow)
+      border:2px solid var(--gold);box-shadow:var(--shadow);
+      transition:transform .35s ease, filter .35s ease;
+      animation:imgGlow 6s ease-in-out infinite alternate;
+    }
+    .gallery img:hover{transform:scale(1.03);filter:brightness(1.03)}
+    @keyframes imgGlow{
+      from{box-shadow:0 10px 24px rgba(0,0,0,.08)}
+      to{box-shadow:0 14px 30px rgba(201,162,39,.18)}
     }
 
-    .testimonial{padding:20px;border-right:4px solid var(--gold)}
+    .project-caption{
+      margin-top:10px;
+      color:#555;
+      font-size:14px;
+      text-align:center;
+      padding:0 8px;
+    }
+
+    .testimonial{
+      padding:20px;border-right:4px solid var(--gold)
+    }
     .testimonial p{color:#333}
     .testimonial h4{margin-top:12px;color:var(--gold)}
 
@@ -139,43 +188,45 @@
       <div class="subtitle">ENGINEERING CONTRACTING AND GENERAL TRADING COMPANY</div>
     </div>
     <nav>
-      <a href="#about">من نحن</a>
-      <a href="#services">الخدمات</a>
-      <a href="#gallery">المشاريع</a>
-      <a href="#testimonials">آراء العملاء</a>
-      <a href="#location">الموقع</a>
-      <a href="#contact">تواصل</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Projects</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#location">Location</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="container">
-      <h2>فخامة في التصميم، واحترافية في التنفيذ</h2>
+      <h2>Elegance in Design, Excellence in Execution</h2>
       <p>
-        شركة السراج للهندسة المعمارية — شركة متخصصة في المقاولات العامة والتجارة العامة،
-        تقدم حلولًا هندسية متكاملة بجودة عالية ولمسة راقية.
+        Al-Sarraj Company is a distinguished engineering contracting and general trading company,
+        delivering refined, reliable, and complete solutions with a timeless sense of quality,
+        professionalism, and architectural sophistication.
       </p>
       <div class="btns">
-        <a class="btn btn-gold" href="https://wa.me/9647844910779" target="_blank">تواصل واتساب</a>
-        <a class="btn btn-dark" href="#gallery">شاهد المشاريع</a>
-        <a class="btn btn-outline" href="https://maps.google.com/?q=Baghdad+Mansour+Iraq" target="_blank">الموقع على الخريطة</a>
+        <a class="btn btn-gold" href="https://wa.me/9647844910779" target="_blank">WhatsApp</a>
+        <a class="btn btn-dark" href="#gallery">View Projects</a>
+        <a class="btn btn-outline" href="https://maps.google.com/?q=Baghdad+Mansour+Iraq" target="_blank">Open Map</a>
       </div>
     </div>
   </section>
 
   <section id="about">
     <div class="container">
-      <h2 class="title">من نحن</h2>
+      <h2 class="title">About Us</h2>
       <div class="card">
         <p>
-          شركة السراج للهندسة المعمارية تأسست عام 2024،
-          وتعمل في مجال المقاولات الهندسية والتجارة العامة.
-          نحن نبني علاقات مهنية قوية في قطاع المقاولات والهندسة، ونعتمد على فريق مؤهل
-          في الإدارة والهندسة المعمارية والمدنية والكهربائية والميكانيكية.
+          Al-Sarraj Company, established in 2024, is a specialized engineering and general contracting company
+          committed to building trusted professional relationships through precision, integrity, and excellence.
+          Our qualified team includes specialists in management, architecture, civil engineering, electrical systems,
+          and mechanical works.
         </p>
         <p style="margin-top:12px;">
-          نهدف إلى تقديم أفضل الخدمات المتعلقة بالمقاولات والخدمات العامة، مع رؤية توسع
-          باستخدام التكنولوجيا الصديقة للبيئة والأفكار الذكية.
+          We believe that every project deserves a thoughtful balance of beauty, durability, and efficiency.
+          Our goal is to provide premium contracting and general services that reflect a modern vision,
+          smart solutions, and environmentally conscious growth.
         </p>
       </div>
     </div>
@@ -183,45 +234,54 @@
 
   <section id="services">
     <div class="container">
-      <h2 class="title">خدماتنا</h2>
+      <h2 class="title">Services</h2>
       <div class="grid">
-        <div class="box"><h3>التصميم الهندسي</h3><p>تصاميم دقيقة وعصرية</p></div>
-        <div class="box"><h3>إدارة المشاريع</h3><p>تنظيم وتنفيذ احترافي</p></div>
-        <div class="box"><h3>الإشراف الهندسي</h3><p>متابعة الجودة في كل مرحلة</p></div>
-        <div class="box"><h3>الأعمال الكهربائية والميكانيكية</h3><p>حلول متكاملة للمشاريع</p></div>
-        <div class="box"><h3>الأعمال الإنشائية</h3><p>تنفيذ قوي وموثوق</p></div>
-        <div class="box"><h3>الاستشارات الهندسية</h3><p>توجيه هندسي متخصص</p></div>
-        <div class="box"><h3>الصيانة والتشغيل</h3><p>استمرارية وكفاءة عالية</p></div>
+        <div class="box"><h3>Engineering Design</h3><p>Modern and precise design solutions</p></div>
+        <div class="box"><h3>Project Management</h3><p>Structured planning and delivery</p></div>
+        <div class="box"><h3>Engineering Supervision</h3><p>Quality control at every stage</p></div>
+        <div class="box"><h3>Electrical & Mechanical Works</h3><p>Integrated technical execution</p></div>
+        <div class="box"><h3>Construction Works</h3><p>Reliable and strong implementation</p></div>
+        <div class="box"><h3>Engineering Consulting</h3><p>Expert guidance for every project</p></div>
+        <div class="box"><h3>Maintenance & Operation</h3><p>Long-term performance and support</p></div>
       </div>
     </div>
   </section>
 
   <section id="gallery">
     <div class="container">
-      <h2 class="title">المشاريع</h2>
+      <h2 class="title">Projects</h2>
       <div class="grid gallery">
-        <img src="photo1.jpg" alt="مشروع 1">
-        <img src="photo2.jpg" alt="مشروع 2">
-        <img src="photo3.JPG" alt="مشروع 3">
+        <div>
+          <img src="photo1.jpg" alt="Project 1">
+          <div class="project-caption">Project One — a refined example of our engineering execution and attention to detail.</div>
+        </div>
+        <div>
+          <img src="photo2.jpg" alt="Project 2">
+          <div class="project-caption">Project Two — combining structural strength with elegant finishing and practical design.</div>
+        </div>
+        <div>
+          <img src="photo3.JPG" alt="Project 3">
+          <div class="project-caption">Project Three — a professional result that reflects our commitment to quality and excellence.</div>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="testimonials">
     <div class="container">
-      <h2 class="title">آراء العملاء</h2>
+      <h2 class="title">Testimonials</h2>
       <div class="grid">
         <div class="testimonial">
-          <p>شركة راقية جدًا في التعامل والتنفيذ، والتزامهم بالمواعيد ممتاز.</p>
-          <h4>- عميل</h4>
+          <p>The company delivered exceptional work with elegance, precision, and reliable communication throughout the project.</p>
+          <h4>- Client</h4>
         </div>
         <div class="testimonial">
-          <p>جودة العمل ممتازة، والنتيجة النهائية كانت أفضل من المتوقع.</p>
-          <h4>- عميل</h4>
+          <p>A highly professional team with impressive attention to detail and a truly refined standard of execution.</p>
+          <h4>- Client</h4>
         </div>
         <div class="testimonial">
-          <p>فريق محترف، وخدمة عالية المستوى، وأنصح بالتعامل معهم.</p>
-          <h4>- عميل</h4>
+          <p>Outstanding quality, smooth coordination, and a premium experience from start to finish.</p>
+          <h4>- Client</h4>
         </div>
       </div>
     </div>
@@ -229,18 +289,18 @@
 
   <section id="location">
     <div class="container">
-      <h2 class="title">الموقع</h2>
+      <h2 class="title">Location</h2>
       <div class="card">
         <div class="info-list">
-          <div><strong>العنوان:</strong> العراق - بغداد - المنصور (فرع 1 وفرع 2)</div>
-          <div><strong>المدير:</strong> المهندس حسنين أحمد</div>
-          <div><strong>الأرقام:</strong> 07844910779 / 07721123000 / 07821123000 / 07704925500</div>
+          <div><strong>Address:</strong> Iraq - Baghdad - Mansour (Branch 1 and Branch 2)</div>
+          <div><strong>Director:</strong> Engineer Hassanin Ahmed</div>
+          <div><strong>Phone Numbers:</strong> 07844910779 / 07721123000 / 07821123000 / 07704925500</div>
         </div>
         <div class="map">
           <iframe src="https://www.google.com/maps?q=Baghdad+Mansour+Iraq&output=embed"></iframe>
         </div>
         <div class="btns">
-          <a class="btn btn-gold" href="https://maps.google.com/?q=Baghdad+Mansour+Iraq" target="_blank">فتح الخريطة</a>
+          <a class="btn btn-gold" href="https://maps.google.com/?q=Baghdad+Mansour+Iraq" target="_blank">Open Map</a>
         </div>
       </div>
     </div>
@@ -248,23 +308,23 @@
 
   <section id="contact">
     <div class="container">
-      <h2 class="title">تواصل معنا</h2>
+      <h2 class="title">Contact</h2>
       <div class="card" style="text-align:center;">
-        <p>اختر طريقة التواصل المناسبة:</p>
+        <p>Choose your preferred way to reach us:</p>
         <div class="btns">
-          <a class="btn btn-gold" href="https://wa.me/9647844910779" target="_blank">واتساب</a>
-          <a class="btn btn-dark" href="https://www.instagram.com/alsiraj.eng?exln=MWY5YmFpMGpkb2NjdQ%3D%3D&utm_source=qr" target="_blank">إنستغرام</a>
-          <a class="btn btn-outline" href="tel:07844910779">اتصال</a>
+          <a class="btn btn-gold" href="https://wa.me/9647844910779" target="_blank">WhatsApp</a>
+          <a class="btn btn-dark" href="https://www.instagram.com/alsiraj.eng?exln=MWY5YmFpMGpkb2NjdQ%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+          <a class="btn btn-outline" href="tel:07844910779">Call</a>
         </div>
       </div>
     </div>
   </section>
 
-  <a class="whatsapp-fixed" href="https://wa.me/9647844910779" target="_blank">واتساب</a>
-  <a class="float-call" href="tel:07844910779">اتصال</a>
+  <a class="whatsapp-fixed" href="https://wa.me/9647844910779" target="_blank">WhatsApp</a>
+  <a class="float-call" href="tel:07844910779">Call</a>
 
   <footer>
-    © 2024 شركة السراج للهندسة المعمارية
+    © 2024 Al-Sarraj Company
   </footer>
 
 </body>
